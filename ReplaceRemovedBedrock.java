@@ -1,6 +1,5 @@
-package com.urbigmumz.replaceremovedbedrock;
+package com.urbigmumz.world;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
@@ -10,18 +9,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ReplaceRemovedBedrock extends JavaPlugin implements Listener {
+public final class ReplaceRemovedBedrock extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getLogger().info("ReplaceRemovedBedrock has been enabled!");
-        Bukkit.getPluginManager().registerEvents(this, this);
+        System.out.println("ReplaceRemovedBedrock has been enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        System.out.println("ReplaceRemovedBedrock has been disabled :(");
     }
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         World world = event.getBlock().getWorld();
-        if (world.getEnvironment() != Environment.END) {
+        if (world.getEnvironment() != Environment.THE_END) {
             fillBedrockAtYZero(world);
         }
     }
