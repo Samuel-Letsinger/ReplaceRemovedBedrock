@@ -29,7 +29,6 @@ public final class ReplaceRemovedBedrock extends JavaPlugin implements Listener 
     public void onBlockBreak(BlockBreakEvent event) {
         World world = event.getBlock().getWorld();
         if (world.getEnvironment() != Environment.THE_END) {
-            System.out.println("Made it #1");
             fillBedrockAtYZero(world);
         }
     }
@@ -39,7 +38,6 @@ public final class ReplaceRemovedBedrock extends JavaPlugin implements Listener 
         World overworld = Bukkit.getServer().getWorld("world");
         World nether = Bukkit.getServer().getWorld("world_nether");
         if (environment == Environment.NORMAL || environment == Environment.NETHER) {
-            System.out.println("Made it #2");
             for (Chunk chunk : world.getLoadedChunks()) {
                 int chunkX = chunk.getX() << 4;
                 int chunkZ = chunk.getZ() << 4;
@@ -62,7 +60,6 @@ public final class ReplaceRemovedBedrock extends JavaPlugin implements Listener 
                             }
                         }
                         if (block.getType() != Material.BEDROCK) {
-                            System.out.println("Made it #3");
                             block.setType(Material.BEDROCK);
                         }
                     }
