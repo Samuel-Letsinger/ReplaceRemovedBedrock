@@ -14,7 +14,7 @@ public class ReplaceRemovedBedrock extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getLogger().info("ReplaceBedrockFloorAndRoof has been enabled!");
+        getLogger().info("ReplaceRemovedBedrock has been enabled!");
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
