@@ -13,12 +13,13 @@ public final class ReplaceRemovedBedrock extends JavaPlugin implements Listener 
 
     @Override
     public void onEnable() {
-        System.out.println("ReplaceRemovedBedrock has been enabled!");
+        getServer().getPluginManager().registerEvents(this, this);
+        System.out.println("[ReplaceRemovedBedrock] has been enabled!");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("ReplaceRemovedBedrock has been disabled :(");
+        System.out.println("[ReplaceRemovedBedrock] has been disabled :(");
     }
 
     @EventHandler
